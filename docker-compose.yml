@@ -1,0 +1,53 @@
+version: '3'
+services:
+
+  # Servidor de cálculo
+  calc:
+    build: './calc'
+    ports:
+      - "3001:3000"
+    depends_on: 
+      - db
+    environment:
+      - TZ=America/Sao_Paulo
+      - PORT=3001
+      - DB=mongodb+srv://admin:admin31admin23@solucimobdev.a5bhg.mongodb.net/SOLUCIMOBDEV?retryWrites=true&w=majority
+      - URL_SERVICE_CALC=http://calc:3000
+      - URL_SERVICE_CONFIG=http://config:3000
+      - DOMAIN=http://calc:3000
+      - ORIGIN=*
+      - CONFIG_VALOR_M2=1500
+
+  # Servidor de configuração
+  config:
+    build: './config'
+    ports:
+      - "3000:3000"
+    depends_on: 
+      - db
+    environment:
+      - TZ=America/Sao_Paulo
+      - PORT=3001
+      - DB=mongodb+srv://admin:admin31admin23@solucimobdev.a5bhg.mongodb.net/SOLUCIMOBDEV?retryWrites=true&w=majority
+      - URL_SERVICE_CALC=http://calc:3000
+      - URL_SERVICE_CONFIG=http://config:3000
+      - DOMAIN=http://calc:3000
+      - ORIGIN=*
+      - CONFIG_VALOR_M2=1500
+  
+  # Imagem com o banco de dados
+  #db:
+  #  image: mongo
+  #  ports:
+  #    - "27017:27017"
+
+  # Gateway
+  nginx:
+    image: nginx:latest
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./default.conf:/etc/nginx/conf.d/default.conf
+    depends_on:
+      - calc
+      - config
