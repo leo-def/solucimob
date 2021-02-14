@@ -1,0 +1,6 @@
+[submodule "config"]
+	path = config
+	url = https://github.com/leo-def/solucimob-config.git
+[submodule "calc"]
+	path = calc
+	url = https://github.com/leo-def/solucimob-calc.git
