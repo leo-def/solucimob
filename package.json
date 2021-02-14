@@ -1,0 +1,23 @@
+{
+  "name": "solucimob",
+  "version": "1.1.0",
+  "description": "Solução Imobiliária",
+  "main": "index.js",
+  "scripts": {
+    "dev": "docker-compose up"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/leo-def/solucimob.git"
+  },
+  "keywords": [
+    "solução",
+    "imobiliária"
+  ],
+  "author": "Leonardo de Freitas Oliveira <leo_defoliveira@live.com>",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leo-def/solucimob/issues"
+  },
+  "homepage": "https://github.com/leo-def/solucimob#readme"
+}
