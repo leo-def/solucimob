@@ -10,7 +10,7 @@ services:
       - db
     environment:
       - TZ=America/Sao_Paulo
-      - PORT=3001
+      - PORT=3000
       - DB=mongodb+srv://admin:admin31admin23@solucimobdev.a5bhg.mongodb.net/SOLUCIMOBDEV?retryWrites=true&w=majority
       - URL_SERVICE_CALC=http://calc:3000
       - URL_SERVICE_CONFIG=http://config:3000
@@ -27,7 +27,7 @@ services:
       - db
     environment:
       - TZ=America/Sao_Paulo
-      - PORT=3001
+      - PORT=3000
       - DB=mongodb+srv://admin:admin31admin23@solucimobdev.a5bhg.mongodb.net/SOLUCIMOBDEV?retryWrites=true&w=majority
       - URL_SERVICE_CALC=http://calc:3000
       - URL_SERVICE_CONFIG=http://config:3000
